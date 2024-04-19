@@ -10,10 +10,8 @@ public class Guess {
     // letter is not used at all
     String NOT_USED = "I";
 
-    Dictionary<String, String> colorDict= new Hashable<>();
-    colorDict.put("COLOR", "green");
-    colorDict.put("MISPLACED", "yellow");
-    colorDict.put("NOT_USED", "grey");
+
+    Hashtable<String, String> colorDict= new Hashtable<>();
 
     // instance variables
     // the guess
@@ -31,6 +29,10 @@ public class Guess {
 
 
     public Guess(String guess, String answer) {
+        colorDict.put("COLOR", "green");
+        colorDict.put("MISPLACED", "yellow");
+        colorDict.put("NOT_USED", "grey");
+
         assert guess.length() == 5 && answer.length() == 5;
         // save the guess for later processing and returning
         _guess = guess;
