@@ -52,15 +52,19 @@ public class Guess {
 
     // helper method to evaluate guess
     private boolean _evaluate(String answer) {
-//        List<Character> answerList = new ArrayList<>();
-//        for (int i = 0; i < answer.length(); i++) {
-//            answerList.add(answer.charAt(i));
-//        }
+
         char[] arrayGuess = _guess.toCharArray();
         char[] answerList = answer.toCharArray();
+        boolean letterUsed = false;
 
         // iterate in reverse order since deleting from answer
         for (int i = 5; i > 0; i--) {
+            // for else-if statement
+            for (int j = 0; j< answerList.length; j++) {
+                if (arrayGuess[i] == answerList[j]) {
+                    letterUsed = true;
+                    break; }
+            }
             // if letter is in correct spot
             if (arrayGuess[i] == answerList[i]) {
                 // mark as correct
@@ -69,15 +73,46 @@ public class Guess {
                 correctLetters.add(arrayGuess[i]);
                 // remove so it isn't used later to mark same letter MISPLACED
                 if (answerList.length != 0) {
-                    String str = new String(answerList);
-                    String newStr = str.substring(0, str.length() - 1);
-                    answerList = newStr.toCharArray();
+                    // creates temporary array with all but the last element
+                    char[] tempArray = Arrays.copyOfRange(answerList, 0, answerList.length - 1);
+                    answerList = tempArray;
                 }
             // letter is not used
+            } else if (!letterUsed) {
+                unusedLetters.add(arrayGuess[i]);
+                _result.set(i,NOT_USED);
             }
         }
-        // TEMP, DELETE
-        return false;
+        // make answerArray with only letters from answer that are not correct
+        List<String> answerArray = new ArrayList<>();
+        for (int i = 0; i < _result.size(); i++) {
+            if (!_result.get(i).equals(CORRECT)) {
+                answerArray.add(_result.get(i));
+            }
+        }
+        // any letters still UNKNOWN are either MISPLACED or NOT_USED
+        for (int i = 0; i < _result.size(); i++) {
+            if (_result.get(i).equals(UNKNOWN)) {
+                String ch = _result.get(i);
+                if (answerArray.contains(ch)) {
+                    _result.set(i,MISPLACED);
+                    answerArray.remove(ch);
+                    // if it's not a correct letter, add to misplaced
+                    if (!correctLetters.contains(ch.charAt(0))) {
+                        misplacedLetters.add(ch.charAt(0));
+                    }
+                } else {
+                    _result.set(i,NOT_USED);
+                }
+            }
+        }
+        // determine if guess is correct
+        for (int i = 0; i < _result.size(); i++) {
+            if (!_result.get(i).equals(CORRECT)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public boolean isCorrect() { return _isCorrect;}
