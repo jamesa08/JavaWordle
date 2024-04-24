@@ -2,13 +2,13 @@ import java.util.*;
 
 public class Guess {
     // initial state of letter until we determine its correct position
-    String  UNKNOWN = "U";
+    public static String  UNKNOWN = "U";
     // letter is in correct position
-    String CORRECT = "C";
+    public static String CORRECT = "C";
     // letter is used at a location not already marked CORRECT
-    String MISPLACED = "M";
+    public static String MISPLACED = "M";
     // letter is not used at all
-    String NOT_USED = "I";
+    public static String NOT_USED = "I";
 
 
     Hashtable<String, String> colorDict= new Hashtable<>();
@@ -21,11 +21,11 @@ public class Guess {
     // whether the guess is completely correct (true if it is)
     boolean _isCorrect;
     // set containing the correct letters for the guess
-    Set<Character> correctLetters;
+    public Set<Character> correctLetters;
     // set containing the misplaced letters for the guess
-    Set<Character> misplacedLetters;
+    public Set<Character> misplacedLetters;
     // set containing unusedLetters
-    Set<Character> unusedLetters;
+    public Set<Character> unusedLetters;
 
 
     public Guess(String guess, String answer) {
