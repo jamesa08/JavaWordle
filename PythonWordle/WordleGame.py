@@ -116,7 +116,6 @@ class Guess:
             if status != Guess.CORRECT:
                 answerList.append(answer[i])
 
-
         # any letters still UNKNOWN are either MISPLACED or NOT_USED
         # can't just mark as MISPLACED in previous loop since could be a duplicate of a correct letter
         # with the letter already in the correct position

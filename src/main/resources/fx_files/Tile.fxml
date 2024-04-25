@@ -1,0 +1,10 @@
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane fx:id="tileContainer" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <Rectangle fx:id="tileBack" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0"/>
+    <Label fx:id="tileText" />
+</StackPane>

@@ -4,36 +4,9 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
-// jar {
-//     manifest {
-//         attributes 'Main-Class': 'com.csdemo.Guess'
-//     }
-// }
-
-// repositories {
-//     mavenCentral()
-// }
-
 javafx {
     modules = ['javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml']
 }
-
-// java {
-//     // this enables Java Modularity in Gradle (version 6.7 and above)
-//     modularity.inferModulePath.set(true)
-// }
-// // Based on this StackOverflow answer: https://stackoverflow.com/a/65209664/653519 
-// private static String getJavaFXPlatform() {
-//     def currentOS = org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.currentOperatingSystem;
-//     if (currentOS.isWindows()) {
-//         return 'win'
-//     } else if (currentOS.isLinux()) {
-//         return 'linux'
-//     } else if (currentOS.isMacOsX()) {
-//         return 'mac'
-//     }
-//     return null
-// }
 
 group 'com.csdemo'
 version '1.0-SNAPSHOT'

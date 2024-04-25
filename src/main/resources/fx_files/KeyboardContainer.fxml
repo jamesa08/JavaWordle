@@ -1,0 +1,11 @@
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="com.csdemo.KeyboardUI" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER">
+    <HBox fx:id="keyboardTopRow" alignment="CENTER"/>
+    <HBox fx:id="keyboardMiddleRow" alignment="CENTER"/>
+    <HBox fx:id="keyboardBottomRow" alignment="CENTER"/>
+</VBox>
+

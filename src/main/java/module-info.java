@@ -7,4 +7,5 @@ module com.csdemo {
     opens com.csdemo to javafx.fxml;
     
     exports com.csdemo;
+    exports com.csdemo.model;
 }

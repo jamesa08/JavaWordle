@@ -1,0 +1,7 @@
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<HBox fx:controller="com.csdemo.GuessUI"  fx:id="guessContainer" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER">
+</HBox>
